@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RakshaNova - Disaster Relief</title>
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet Map CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+</head>
+
+<body>
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <header class="hero">
+        <h1>RakshaNova</h1>
+
+        <p>
+            Smarter Help. Safer Routes. Faster Relief.
+        </p>
+
+        <button id="btn-find-route">
+            🛣️ Find Safe Route
+        </button>
+
+        <button id="btn-find-shelter">
+            🏠 Find Shelter
+        </button>
+    </header>
+
+
+    <!-- ================= DISASTER STATUS ================= -->
+
+    <section class="dashboard">
+
+        <h2>🚨 Disaster Dashboard</h2>
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3>🏠 Shelters</h3>
+                <strong id="stat-shelters">0</strong>
+                <p>Active shelters</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>🚧 Blocked Roads</h3>
+                <strong id="stat-roads">0</strong>
+                <p>Currently blocked</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>🚑 Rescue Vehicles</h3>
+                <strong id="stat-vehicles">0</strong>
+                <p>Available units</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>🌧️ Weather</h3>
+                <strong id="stat-weather">Loading...</strong>
+                <p id="stat-weather-sub">Loading weather...</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAP SECTION ================= -->
+
+    <section id="map-section">
+
+        <h2>🗺️ Emergency Map</h2>
+
+        <p>
+            Find shelters, blocked roads and rescue vehicles.
+        </p>
+
+        <!-- Leaflet will create the map here -->
+        <div id="map"></div>
+
+    </section>
+
+
+    <!-- ================= ROUTE PLANNER ================= -->
+
+    <section id="route-panel">
+
+        <h2>🛣️ Safe Route Planner</h2>
+
+        <p>
+            Select a shelter to find a safer route.
+        </p>
+
+        <select id="destination-select">
+            <option value="">Select a shelter</option>
+        </select>
+
+        <button id="btn-calculate-route">
+            Find Safe Route
+        </button>
+
+        <div id="route-result" class="hidden">
+
+            <h3>✅ Safer Route Found</h3>
+
+            <p>
+                Distance:
+                <strong id="route-distance">--</strong>
+            </p>
+
+            <p>
+                Estimated Time:
+                <strong id="route-time">--</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SHELTER DETAILS ================= -->
+
+    <section id="shelter-details" class="hidden">
+
+        <h2>🏠 Shelter Details</h2>
+
+        <h3 id="sd-name">Shelter</h3>
+
+        <p>
+            Distance:
+            <strong id="sd-distance">--</strong>
+        </p>
+
+        <p>
+            Capacity:
+            <strong id="sd-capacity">--</strong>
+        </p>
+
+        <p>
+            Available Beds:
+            <strong id="sd-beds">--</strong>
+        </p>
+
+        <p>
+            Supplies:
+            <strong id="sd-supplies">--</strong>
+        </p>
+
+        <p>
+            Contact:
+            <strong id="sd-contact">--</strong>
+        </p>
+
+    </section>
+
+
+    <!-- ================= EMERGENCY SECTION ================= -->
+
+    <section class="emergency">
+
+        <h2>🚨 Emergency Contacts</h2>
+
+        <div class="emergency-buttons">
+
+            <button>👮 Police</button>
+
+            <button>🚑 Ambulance</button>
+
+            <button>🔥 Fire Department</button>
+
+            <button>📞 Disaster Helpline</button>
+
+        </div>
+
+        <p>
+            Demo emergency contacts — replace with verified local numbers
+            before real-world deployment.
+        </p>
+
+    </section>
+
+
+    <!-- Leaflet Map JavaScript -->
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <!-- Our JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
